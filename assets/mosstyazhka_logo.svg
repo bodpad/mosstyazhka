@@ -1,0 +1,19 @@
+<svg width="680" height="360" viewBox="0 0 680 360" xmlns="http://www.w3.org/2000/svg">
+<rect x="0" y="0" width="680" height="360" fill="#FAFAF8"/>
+<g transform="translate(250, 60)">
+  <rect x="0" y="20" width="180" height="36" rx="4" fill="#1A1A1A"/>
+  <rect x="60" y="20" width="60" height="36" fill="#F5C518"/>
+  <circle cx="90" cy="38" r="11" fill="#FAFAF8" stroke="#1A1A1A" stroke-width="1.5"/>
+  <circle cx="90" cy="38" r="5" fill="none" stroke="#1A1A1A" stroke-width="1.5"/>
+  <line x1="20" y1="20" x2="20" y2="28" stroke="#FAFAF8" stroke-width="1.5"/>
+  <line x1="35" y1="20" x2="35" y2="28" stroke="#FAFAF8" stroke-width="1.5"/>
+  <line x1="50" y1="20" x2="50" y2="28" stroke="#FAFAF8" stroke-width="1.5"/>
+  <line x1="130" y1="20" x2="130" y2="28" stroke="#FAFAF8" stroke-width="1.5"/>
+  <line x1="145" y1="20" x2="145" y2="28" stroke="#FAFAF8" stroke-width="1.5"/>
+  <line x1="160" y1="20" x2="160" y2="28" stroke="#FAFAF8" stroke-width="1.5"/>
+</g>
+<text x="340" y="200" text-anchor="middle" font-family="Arial Black, Arial, sans-serif" font-size="60" font-weight="900" fill="#1A1A1A" letter-spacing="-1">МосСтяжка</text>
+<text x="340" y="238" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" font-weight="400" fill="#1A1A1A" letter-spacing="3">ПОЛУСУХАЯ СТЯЖКА ПОЛА</text>
+<line x1="240" y1="262" x2="440" y2="262" stroke="#F5C518" stroke-width="3"/>
+<text x="340" y="294" text-anchor="middle" font-family="Arial Black, Arial, sans-serif" font-size="22" font-weight="900" fill="#1A1A1A" letter-spacing="0.5">мосстяжка.рф</text>
+</svg>
