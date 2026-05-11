@@ -112,6 +112,7 @@
 
       <a href="#faq" class="block py-2 text-cream hover:text-accent">Вопросы</a>
       <a href="#reviews" class="block py-2 text-cream hover:text-accent">Отзывы</a>
+      <a href="#gallery" class="block py-2 text-cream hover:text-accent">Объекты</a>
       <a href="#form" class="block mt-3 bg-accent text-dark px-6 py-3 rounded-lg font-bold text-center hover:bg-accent/90">
         Заказать замер
       </a>
@@ -481,6 +482,42 @@
     </div>
   </section>
 
+  <!-- ===== ГАЛЕРЕЯ ===== -->
+  <section id="gallery" class="py-12 md:py-20">
+    <div class="max-w-6xl mx-auto px-4 md:px-8">
+      <h2 class="text-3xl md:text-4xl font-extrabold mb-2 text-center">Наши объекты</h2>
+      <p class="text-muted text-center mb-10">Квартиры, загородные дома, коммерческие помещения</p>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+
+        <div class="gallery-item rounded-xl overflow-hidden aspect-video bg-gray-200 cursor-pointer">
+          <img src="https://picsum.photos/seed/screed1/800/450" alt="Полусухая стяжка — объект 1" class="w-full h-full object-cover" loading="lazy">
+        </div>
+
+        <div class="gallery-item rounded-xl overflow-hidden aspect-video bg-gray-200 cursor-pointer">
+          <img src="https://picsum.photos/seed/screed2/800/450" alt="Полусухая стяжка — объект 2" class="w-full h-full object-cover" loading="lazy">
+        </div>
+
+        <div class="gallery-item rounded-xl overflow-hidden aspect-video bg-gray-200 cursor-pointer">
+          <img src="https://picsum.photos/seed/screed3/800/450" alt="Полусухая стяжка — объект 3" class="w-full h-full object-cover" loading="lazy">
+        </div>
+
+        <div class="gallery-item rounded-xl overflow-hidden aspect-video bg-gray-200 cursor-pointer">
+          <img src="https://picsum.photos/seed/screed4/800/450" alt="Полусухая стяжка — объект 4" class="w-full h-full object-cover" loading="lazy">
+        </div>
+
+        <div class="gallery-item rounded-xl overflow-hidden aspect-video bg-gray-200 cursor-pointer">
+          <img src="https://picsum.photos/seed/screed5/800/450" alt="Полусухая стяжка — объект 5" class="w-full h-full object-cover" loading="lazy">
+        </div>
+
+        <div class="gallery-item rounded-xl overflow-hidden aspect-video bg-gray-200 cursor-pointer">
+          <img src="https://picsum.photos/seed/screed6/800/450" alt="Полусухая стяжка — объект 6" class="w-full h-full object-cover" loading="lazy">
+        </div>
+
+      </div>
+    </div>
+  </section>
+
   <!-- ===== НАПИСАТЬ НАМ ===== -->
   <section id="form" class="py-16 md:py-24 bg-dark">
     <div class="max-w-6xl mx-auto px-4 md:px-8">
@@ -568,6 +605,7 @@
 
             <li><a href="#faq" class="hover:text-accent">Вопросы и ответы</a></li>
             <li><a href="#reviews" class="hover:text-accent">Отзывы</a></li>
+            <li><a href="#gallery" class="hover:text-accent">Наши объекты</a></li>
             <li><a href="#form" class="hover:text-accent">Заявка</a></li>
           </ul>
         </div>
@@ -591,6 +629,15 @@
       </div>
     </div>
   </footer>
+
+  <!-- ===== ЛАЙТБОКС ===== -->
+  <div id="lightbox" class="fixed inset-0 z-50 hidden flex-col items-center justify-center" style="background: rgba(0,0,0,0.92);">
+    <button id="lb-close" aria-label="Закрыть" class="absolute top-4 right-5 text-white text-5xl leading-none hover:text-gray-400">&times;</button>
+    <button id="lb-prev" aria-label="Предыдущее" class="absolute left-3 md:left-8 text-white hover:text-gray-400" style="font-size: 3rem; line-height: 1;">&#8249;</button>
+    <img id="lb-img" src="" alt="" class="rounded-lg object-contain" style="max-width: 90vw; max-height: 85vh;">
+    <p id="lb-caption" class="text-gray-400 text-sm mt-3"></p>
+    <button id="lb-next" aria-label="Следующее" class="absolute right-3 md:right-8 text-white hover:text-gray-400" style="font-size: 3rem; line-height: 1;">&#8250;</button>
+  </div>
 
   <script src="script.js"></script>
 </body>
