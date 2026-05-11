@@ -13,6 +13,36 @@ mobileMenu.querySelectorAll('a').forEach(link => {
   });
 });
 
+// --- Интерактивный уровень ---
+const heroBubble = document.getElementById('hero-bubble');
+if (heroBubble) {
+  let posX = -65;   // стартовое смещение (пузырёк левее центра)
+  let targetX = 0;
+  let velX = 0;
+  const MAX = 38;   // макс. смещение в пикселях SVG (не выходим за жёлтое окно)
+
+  function tick() {
+    velX = velX * 0.78 + (targetX - posX) * 0.06;
+    posX += velX;
+    heroBubble.style.transform = `translateX(${posX}px)`;
+    requestAnimationFrame(tick);
+  }
+  tick();
+
+  // Десктоп: пузырёк следует за мышью по горизонтали
+  document.addEventListener('mousemove', (e) => {
+    const ratio = (e.clientX / window.innerWidth) * 2 - 1; // -1..1
+    targetX = Math.max(-MAX, Math.min(MAX, ratio * MAX));
+  });
+
+  // Мобильный: пузырёк реагирует на наклон телефона
+  window.addEventListener('deviceorientation', (e) => {
+    if (e.gamma !== null) {
+      targetX = Math.max(-MAX, Math.min(MAX, e.gamma * 0.85));
+    }
+  });
+}
+
 // --- Галерея / Лайтбокс ---
 const galleryItems = [...document.querySelectorAll('.gallery-item')];
 const lightbox   = document.getElementById('lightbox');
