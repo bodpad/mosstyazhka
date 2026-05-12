@@ -1,0 +1,20 @@
+<svg width="500" height="500" viewBox="0 0 500 500" xmlns="http://www.w3.org/2000/svg">
+<rect x="0" y="0" width="500" height="500" fill="#1A1A1A"/>
+<!-- Мини-уровень сверху -->
+<rect x="125" y="125" width="250" height="55" rx="8" fill="#FAFAF8"/>
+<rect x="208" y="125" width="84" height="55" fill="#F5C518"/>
+<circle cx="250" cy="152" r="18" fill="#FAFAF8" stroke="#1A1A1A" stroke-width="3"/>
+<circle cx="250" cy="152" r="8" fill="none" stroke="#1A1A1A" stroke-width="3"/>
+<line x1="145" y1="125" x2="145" y2="145" stroke="#1A1A1A" stroke-width="2"/>
+<line x1="165" y1="125" x2="165" y2="145" stroke="#1A1A1A" stroke-width="2"/>
+<line x1="185" y1="125" x2="185" y2="145" stroke="#1A1A1A" stroke-width="2"/>
+<line x1="315" y1="125" x2="315" y2="145" stroke="#1A1A1A" stroke-width="2"/>
+<line x1="335" y1="125" x2="335" y2="145" stroke="#1A1A1A" stroke-width="2"/>
+<line x1="355" y1="125" x2="355" y2="145" stroke="#1A1A1A" stroke-width="2"/>
+<!-- Название -->
+<text x="250" y="300" text-anchor="middle" font-family="Arial Black, Arial, sans-serif" font-size="64" font-weight="900" fill="#FAFAF8" letter-spacing="-2">МосСтяжка</text>
+<!-- Желтая линия -->
+<line x1="150" y1="330" x2="350" y2="330" stroke="#F5C518" stroke-width="4"/>
+<!-- Подпись снизу -->
+<text x="250" y="385" text-anchor="middle" font-family="Arial, sans-serif" font-size="20" font-weight="400" fill="#FAFAF8" letter-spacing="4">ПОЛУСУХАЯ СТЯЖКА</text>
+</svg>
