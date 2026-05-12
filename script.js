@@ -109,9 +109,9 @@ if (document.getElementById('coverage-map') && typeof ymaps !== 'undefined') {
       suppressMapOpenBlock: true,
     });
 
-    // Зона покрытия — круг 130 км
+    // Зона покрытия — круг 150 км
     map.geoObjects.add(new ymaps.Circle(
-      [center, 130000],
+      [center, 150000],
       {},
       {
         fillColor: '#F5C51826',
@@ -123,7 +123,7 @@ if (document.getElementById('coverage-map') && typeof ymaps !== 'undefined') {
 
     // Метка
     var mark = new ymaps.Placemark(center, {
-      balloonContent: '<b>МосСтяжка</b><br>г. Москва<br>Зона выезда — 130 км',
+      balloonContent: '<b>МосСтяжка</b><br>г. Москва<br>Зона выезда — 150 км',
     }, {
       preset: 'islands#blackCircleDotIcon',
     });
