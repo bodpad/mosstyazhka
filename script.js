@@ -99,7 +99,7 @@ document.addEventListener('keydown', (e) => {
 // --- Карта зоны выезда (Яндекс Карты) ---
 if (document.getElementById('coverage-map') && typeof ymaps !== 'undefined') {
   ymaps.ready(function () {
-    var center = [55.6767, 37.2727]; // Одинцово
+    var center = [55.7558, 37.6173]; // Москва
 
     var map = new ymaps.Map('coverage-map', {
       center: center,
@@ -109,9 +109,9 @@ if (document.getElementById('coverage-map') && typeof ymaps !== 'undefined') {
       suppressMapOpenBlock: true,
     });
 
-    // Зона покрытия — круг 100 км
+    // Зона покрытия — круг 130 км
     map.geoObjects.add(new ymaps.Circle(
-      [center, 100000],
+      [center, 130000],
       {},
       {
         fillColor: '#F5C51826',
@@ -123,7 +123,7 @@ if (document.getElementById('coverage-map') && typeof ymaps !== 'undefined') {
 
     // Метка
     var mark = new ymaps.Placemark(center, {
-      balloonContent: '<b>МосСтяжка</b><br>г. Одинцово<br>Зона выезда — 100 км',
+      balloonContent: '<b>МосСтяжка</b><br>г. Москва<br>Зона выезда — 130 км',
     }, {
       preset: 'islands#blackCircleDotIcon',
     });
