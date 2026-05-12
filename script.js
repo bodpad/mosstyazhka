@@ -1,3 +1,12 @@
+// --- Номер телефона (рендерится через JS — защита от HTML-скрейперов) ---
+(function () {
+  const n = '0245181199'.split('').reverse().join(''); // 9911815420
+  const display = '+7 ' + n.slice(0, 3) + ' ' + n.slice(3, 6) + '-' + n.slice(6, 8) + '-' + n.slice(8);
+  document.querySelectorAll('.phone-display').forEach(function (el) {
+    el.textContent = display;
+  });
+}());
+
 // --- Мобильное меню ---
 const burger = document.getElementById('burger');
 const mobileMenu = document.getElementById('mobile-menu');
