@@ -96,6 +96,42 @@ document.addEventListener('keydown', (e) => {
   if (e.key === 'ArrowRight') lbNavigate(1);
 });
 
+// --- Карта зоны выезда (Яндекс Карты) ---
+if (document.getElementById('coverage-map') && typeof ymaps !== 'undefined') {
+  ymaps.ready(function () {
+    var center = [55.6767, 37.2727]; // Одинцово
+
+    var map = new ymaps.Map('coverage-map', {
+      center: center,
+      zoom: 8,
+      controls: ['zoomControl'],
+    }, {
+      suppressMapOpenBlock: true,
+    });
+
+    // Зона покрытия — круг 100 км
+    map.geoObjects.add(new ymaps.Circle(
+      [center, 100000],
+      {},
+      {
+        fillColor: '#F5C51826',
+        strokeColor: '#1A1A1A',
+        strokeWidth: 2,
+        strokeOpacity: 0.6,
+      }
+    ));
+
+    // Метка
+    var mark = new ymaps.Placemark(center, {
+      balloonContent: '<b>МосСтяжка</b><br>г. Одинцово<br>Зона выезда — 100 км',
+    }, {
+      preset: 'islands#blackCircleDotIcon',
+    });
+    map.geoObjects.add(mark);
+    mark.balloon.open();
+  });
+}
+
 // --- FAQ-аккордеон ---
 document.querySelectorAll('.faq-toggle').forEach(button => {
   button.addEventListener('click', () => {

@@ -16,6 +16,7 @@
   <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
   <link rel="icon" href="assets/favicon.ico">
 
+  <script src="https://api-maps.yandex.ru/2.1/?apikey=4be5c9a6-a8ed-4a26-a6f2-6f8ee9744ea0&lang=ru_RU" type="text/javascript"></script>
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
     tailwind.config = {
@@ -308,6 +309,16 @@
         </div>
 
       </div>
+    </div>
+  </section>
+
+  <!-- ===== ЗОНА ВЫЕЗДА ===== -->
+  <section class="py-12 md:py-20">
+    <div class="max-w-6xl mx-auto px-4 md:px-8">
+      <h2 class="text-3xl md:text-4xl font-extrabold mb-4 text-center">Зона выезда</h2>
+      <p class="text-muted text-center mb-8 max-w-xl mx-auto">Работаем в радиусе 100 км от Одинцово — Москва, ближнее и дальнее Подмосковье. Замер бесплатный по всей зоне.</p>
+      <div id="coverage-map" class="rounded-xl overflow-hidden border border-gray-200 shadow-sm" style="height: 440px;"></div>
+      <p class="text-muted text-sm text-center mt-4">Нужны работы за пределами зоны — <a href="tel:+79911815420" class="underline hover:text-dark">звоните</a>, обсудим индивидуально.</p>
     </div>
   </section>
 
@@ -685,6 +696,9 @@
             </li>
             <li>
               <a href="https://wa.me/79911815420" target="_blank" rel="noopener" class="hover:text-accent">WhatsApp</a>
+            </li>
+            <li>
+              <a href="https://max.ru/u/f9LHodD0cOK5wq3ye5xWmyIzC0vl5sLsuM0FzaX31s0n30QosVZd8iHKgL4" target="_blank" rel="noopener" class="hover:text-accent">Max</a>
             </li>
             <li>
               <a href="https://www.avito.ru/user/1845931948d986b7a6b67c8d0318a3b9/profile" target="_blank" rel="noopener" class="hover:text-accent">Авито</a>
