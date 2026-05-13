@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <title>МосСтяжка — Одинцово</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800;900&display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;600;700&display=swap">
+
+  <style>
+    /* В глобальном style — только то, что нельзя инлайном:
+       - CSS-переменные (палитра / шрифты / масштаб / параметры города)
+       - универсальный ресет (*)
+       - базовые стили body и .banner
+
+       ДЛЯ НОВОГО ГОРОДА: меняем только две переменные ниже —
+       --city-name и --city-coat (плюс <title> и alt у <img>).        */
+    :root {
+      --color-dark:    #1A1A1A;
+      --color-accent:  #F5C518;
+      --color-cream:   #FAFAF8;
+      --font-display:  'Manrope', system-ui, sans-serif;
+      --font-display2: 'Oswald', system-ui, sans-serif;
+      --font-display3: 'Rubik', system-ui, sans-serif;
+      --font-logo:     'Manrope', 'Arial Narrow', sans-serif;
+
+      --scale: 1;
+      --bw: calc(1080px * var(--scale));
+      --bh: calc(810px * var(--scale));
+
+      /* ── параметры города ── */
+      --city-name: "Одинцово";
+      --city-coat: url('../coats-of-arms/odintsovo.png');
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      background: #2a2a2a;
+      font-family: var(--font-display);
+      display: grid;
+      place-items: center;
+      min-height: 100vh;
+      padding: 20px;
+    }
+
+    .banner {
+      position: relative;
+      width: var(--bw);
+      height: var(--bh);
+      background: #2a2a2a;
+      overflow: hidden;
+      color: var(--color-cream);
+    }
+  </style>
+</head>
+<body>
+
+<div class="banner">
+  <div style="position:absolute; inset:0; transform-origin:top left; transform:scale(var(--scale)); width:1080px; height:810px; display:flex; flex-direction:column;">
+
+    <!-- ФОНОВЫЕ СЛОИ -->
+    <div style="position:absolute; inset:0; background:url('./screed-photo.jpg') center/cover no-repeat; z-index:0;"></div>
+    <div style="position:absolute; inset:0; z-index:0;
+                background:
+                  linear-gradient(180deg, rgba(26,26,26,0.5) 0, rgba(26,26,26,0) 220px),
+                  linear-gradient(180deg, rgba(26,26,26,0) 430px, rgba(26,26,26,0.55) 600px, rgba(26,26,26,0.9) 810px),
+                  rgba(26,26,26,0.5);"></div>
+
+    <!-- ШАПКА: бренд │ город + герб -->
+    <header style="flex:0 0 110px; background:var(--color-accent); display:flex; align-items:center; padding:0 36px; position:relative; z-index:2;">
+
+      <!-- Левый блок: лого + название + подстрочник -->
+      <div style="display:flex; align-items:center; gap:18px;">
+        <svg viewBox="0 0 120 42" xmlns="http://www.w3.org/2000/svg" style="width:120px; height:42px; flex-shrink:0;">
+          <rect width="120" height="42" rx="5" fill="#1A1A1A"/>
+          <rect x="44" y="14" width="32" height="14" rx="7" fill="#F5C518"/>
+          <circle cx="62" cy="21" r="4" fill="#FAFAF8"/>
+          <line x1="52" y1="14" x2="52" y2="28" stroke="#1A1A1A" stroke-width="1.2"/>
+          <line x1="68" y1="14" x2="68" y2="28" stroke="#1A1A1A" stroke-width="1.2"/>
+          <line x1="14" y1="16" x2="14" y2="26" stroke="#F5C518" stroke-width="1.5"/>
+          <line x1="24" y1="16" x2="24" y2="26" stroke="#F5C518" stroke-width="1.5"/>
+          <line x1="34" y1="16" x2="34" y2="26" stroke="#F5C518" stroke-width="1.5"/>
+          <line x1="86" y1="16" x2="86" y2="26" stroke="#F5C518" stroke-width="1.5"/>
+          <line x1="96" y1="16" x2="96" y2="26" stroke="#F5C518" stroke-width="1.5"/>
+          <line x1="106" y1="16" x2="106" y2="26" stroke="#F5C518" stroke-width="1.5"/>
+        </svg>
+
+        <div style="display:flex; flex-direction:column; gap:2px;">
+          <div style="font-family:var(--font-logo); font-weight:700; font-size:34px; line-height:1; color:var(--color-dark);">МосСтяжка</div>
+        </div>
+
+        <!-- разделитель -->
+        <div style="width:1px; height:54px; background:rgba(26,26,26,0.28); margin:0 6px;"></div>
+
+        <!-- город -->
+        <div style="display:flex; flex-direction:column; gap:2px;">
+          <div style="font-size:12px; color:var(--color-dark); opacity:0.7; text-transform:uppercase; letter-spacing:1.5px;">работаем в городе</div>
+          <div style="font-family:var(--font-display3); font-weight:700; font-size:32px; line-height:1; color:var(--color-dark); letter-spacing:-0.5px;">Одинцово</div>
+        </div>
+      </div>
+
+      <!-- Правый блок: герб -->
+      <div style="margin-left:auto; display:flex; align-items:center; height:100%;">
+        <div style="width:74px; height:90px; background:var(--color-cream); border-radius:8px; box-shadow:0 4px 14px rgba(0,0,0,0.25); display:flex; align-items:center; justify-content:center; padding:6px;">
+          <img src="../coats-of-arms/odintsovo.png" alt="Герб города Одинцово" style="display:block; max-width:100%; max-height:100%; object-fit:contain;">
+        </div>
+      </div>
+    </header>
+
+    <!-- ЦЕНТРАЛЬНАЯ ЗОНА -->
+    <main style="flex:1 1 auto; position:relative; display:flex; flex-direction:column; align-items:center; justify-content:center; padding:48px 60px 0; z-index:1;">
+      <div style="display:flex; flex-direction:column; align-items:center; text-align:center; width:100%;">
+
+        <div style="font-size:22px; opacity:0.85; margin-bottom:30px; letter-spacing:0.3px;">с фиброволокном · по СНиП · М-500</div>
+
+        <h1 style="font-family:var(--font-display3); font-weight:800; font-size:100px; line-height:0.95; color:var(--color-accent); letter-spacing:-3.5px; text-align:center; white-space:nowrap;">
+          Полусухая стяжка
+        </h1>
+        <h1 style="font-family:var(--font-display3); font-weight:800; font-size:100px; line-height:0.95; color:var(--color-accent); letter-spacing:-3.5px; text-align:center; white-space:nowrap; margin-top:6px;">
+          пола
+        </h1>
+
+        <hr style="width:120px; height:3px; background:var(--color-cream); opacity:0.5; border:0; margin:34px 0 28px; border-radius:2px;">
+
+        <div style="font-size:22px; opacity:0.9; letter-spacing:0.3px;">толщина 50–100 мм · готова за 1 день</div>
+      </div>
+    </main>
+
+    <!-- ПРЕИМУЩЕСТВА -->
+    <div style="flex:0 0 auto; display:flex; gap:15px; padding:0 60px 40px; position:relative; z-index:2;">
+
+      <div style="flex:1 1 0; background:rgba(250,250,248,0.08); border:1px solid rgba(250,250,248,0.2); border-radius:14px; padding:20px 22px; display:flex; align-items:center; gap:18px;">
+        <div style="flex-shrink:0; width:44px; height:44px; background:var(--color-accent); border-radius:50%; display:grid; place-items:center;">
+          <svg viewBox="0 0 22 22" style="width:22px; height:22px;"><polyline points="3,11 9,17 19,5" fill="none" stroke="#1A1A1A" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <div style="display:flex; flex-direction:column;">
+          <div style="font-weight:800; font-size:22px; color:var(--color-cream); line-height:1.1;">За 1 день</div>
+          <div style="font-size:15px; color:rgba(250,250,248,0.75); margin-top:4px;">приходим утром, уходим вечером</div>
+        </div>
+      </div>
+
+      <div style="flex:1 1 0; background:rgba(250,250,248,0.08); border:1px solid rgba(250,250,248,0.2); border-radius:14px; padding:20px 22px; display:flex; align-items:center; gap:18px;">
+        <div style="flex-shrink:0; width:44px; height:44px; background:var(--color-accent); border-radius:50%; display:grid; place-items:center;">
+          <svg viewBox="0 0 22 22" style="width:22px; height:22px;"><polyline points="3,11 9,17 19,5" fill="none" stroke="#1A1A1A" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <div style="display:flex; flex-direction:column;">
+          <div style="font-weight:800; font-size:22px; color:var(--color-cream); line-height:1.1;">3 года</div>
+          <div style="font-size:15px; color:rgba(250,250,248,0.75); margin-top:4px;">гарантии по договору</div>
+        </div>
+      </div>
+
+      <div style="flex:1 1 0; background:rgba(250,250,248,0.08); border:1px solid rgba(250,250,248,0.2); border-radius:14px; padding:20px 22px; display:flex; align-items:center; gap:18px;">
+        <div style="flex-shrink:0; width:44px; height:44px; background:var(--color-accent); border-radius:50%; display:grid; place-items:center;">
+          <svg viewBox="0 0 22 22" style="width:22px; height:22px;"><polyline points="3,11 9,17 19,5" fill="none" stroke="#1A1A1A" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <div style="display:flex; flex-direction:column;">
+          <div style="font-weight:800; font-size:22px; color:var(--color-cream); line-height:1.1;">Замер бесплатно</div>
+          <div style="font-size:15px; color:rgba(250,250,248,0.75); margin-top:4px;">приедем когда удобно</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- НИЖНЯЯ ПОЛОСА со слоганом -->
+    <footer style="flex:0 0 42px; background:var(--color-accent); position:relative; z-index:2; display:flex; align-items:center; justify-content:center;">
+      <div style="font-weight:700; font-size:16px; color:var(--color-dark); letter-spacing:0.5px;">
+        с 2017 делаем стяжку в Москве и области
+      </div>
+    </footer>
+
+  </div>
+</div>
+
+</body>
+</html>
