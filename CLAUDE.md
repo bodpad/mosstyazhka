@@ -31,10 +31,10 @@
 
 ### Подключение Tailwind
 
-Tailwind собирается локально через CLI. Конфиг — `tailwind.config.js`, исходник — `input.css`, результат — `output.css` (минифицированный, ~13 КБ).
+Используется **Tailwind CSS v4** (CSS-first конфиг, без `tailwind.config.js`). Собирается локально через CLI: исходник — `input.css`, результат — `output.css` (минифицированный, ~18 КБ).
 
 ```bash
-npm install       # ставит tailwindcss из package.json
+npm install       # ставит tailwindcss + @tailwindcss/cli
 npm run build     # собирает output.css один раз (для коммита)
 npm run watch     # пересобирает на лету при изменениях
 ```
@@ -47,7 +47,19 @@ npm run watch     # пересобирает на лету при изменен
 <link rel="stylesheet" href="output.css">
 ```
 
-Кастомизация цветов и шрифтов — в `tailwind.config.js` (секция `theme.extend`).
+Кастомизация цветов и шрифтов — в `input.css` через директиву `@theme`:
+
+```css
+@import "tailwindcss";
+
+@theme {
+  --color-dark: #1A1A1A;
+  --color-accent: #F5C518;
+  --color-cream: #FAFAF8;
+  --color-muted: #666666;
+  --font-sans: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+}
+```
 
 ## Структура файлов
 
@@ -55,10 +67,9 @@ npm run watch     # пересобирает на лету при изменен
 /
 ├── index.html          # Главная (лендинг)
 ├── script.js           # JS только при необходимости (FAQ, моб. меню, форма)
-├── input.css           # Исходник Tailwind (@tailwind base/components/utilities)
+├── input.css           # Исходник Tailwind (@import + @theme)
 ├── output.css          # Скомпилированный CSS — подключён в index.html
-├── tailwind.config.js  # Конфиг Tailwind (цвета, шрифты)
-├── package.json        # npm-скрипты build/watch и зависимость tailwindcss
+├── package.json        # npm-скрипты build/watch и зависимость tailwindcss v4
 ├── sitemap.xml         # Карта сайта для поисковиков
 ├── robots.txt          # Правила для краулеров
 ├── /assets/            # Логотипы, фавиконы, гербы, SVG-иконки
@@ -71,24 +82,15 @@ npm run watch     # пересобирает на лету при изменен
 
 ## Дизайн-система
 
-### Цветовая палитра (через Tailwind config)
+### Цветовая палитра
 
-Расширяем стандартную палитру в `tailwind.config.js`:
+Палитра задаётся через CSS-переменные в `input.css` (секция `@theme`):
 
-```js
-theme: {
-  extend: {
-    colors: {
-      dark: '#1A1A1A',      // основной текст, кнопки, шапка
-      accent: '#F5C518',    // акценты, CTA, выделения (жёлтый)
-      cream: '#FAFAF8',     // фон страницы
-      muted: '#666666',     // второстепенный текст
-    },
-    fontFamily: {
-      sans: ['system-ui', '-apple-system', 'Segoe UI', 'Roboto', 'sans-serif'],
-    },
-  },
-}
+```css
+--color-dark: #1A1A1A;      /* основной текст, кнопки, шапка */
+--color-accent: #F5C518;    /* акценты, CTA, выделения (жёлтый) */
+--color-cream: #FAFAF8;     /* фон страницы */
+--color-muted: #666666;     /* второстепенный текст */
 ```
 
 Использование в HTML: `bg-dark`, `text-accent`, `border-muted` и т.д. После добавления новых классов в `index.html` запускай `npm run build`.

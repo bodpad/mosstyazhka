@@ -8,6 +8,7 @@
     "watch": "tailwindcss -i ./input.css -o ./output.css --watch"
   },
   "devDependencies": {
-    "tailwindcss": "^3.4.17"
+    "@tailwindcss/cli": "^4.1.0",
+    "tailwindcss": "^4.1.0"
   }
 }
