@@ -1,2 +1,5 @@
 User-agent: *
 Allow: /
+
+Sitemap: https://мосстяжка.рф/sitemap.xml
+Host: мосстяжка.рф

@@ -6,7 +6,16 @@
   <title>Полусухая стяжка пола в Москве и Подмосковье — МосСтяжка</title>
   <meta name="description" content="Механизированная полусухая стяжка с фиброволокном. Гарантия 3 года, работа по СНиП. Замер бесплатно.">
   <meta name="robots" content="index, follow">
+  <meta name="geo.region" content="RU-MOW">
+  <meta name="geo.placename" content="Москва">
+  <meta name="geo.position" content="55.7558;37.6173">
+  <meta name="ICBM" content="55.7558, 37.6173">
   <link rel="canonical" href="https://мосстяжка.рф/">
+
+  <!-- Preconnect для внешних ресурсов -->
+  <link rel="preconnect" href="https://cdn.tailwindcss.com" crossorigin>
+  <link rel="preconnect" href="https://api-maps.yandex.ru" crossorigin>
+  <link rel="dns-prefetch" href="https://api-maps.yandex.ru">
 
   <!-- Open Graph -->
   <meta property="og:title" content="Полусухая стяжка пола в Москве и Подмосковье — МосСтяжка">
@@ -54,9 +63,13 @@
     "@context": "https://schema.org",
     "@type": "LocalBusiness",
     "name": "МосСтяжка",
-    "description": "Механизированная полусухая стяжка пола с фиброволокном в Москве и Подмосковье",
-    "url": "https://мосстяжка.рф",
+    "description": "Механизированная полусухая стяжка пола с фиброволокном в Москве и Подмосковье. Гарантия 3 года, работа по СНиП, бесплатный замер.",
+    "url": "https://мосстяжка.рф/",
+    "logo": "https://мосстяжка.рф/assets/mosstyazhka_logo.svg",
+    "image": "https://мосстяжка.рф/assets/mosstyazhka_avatar.png",
     "telephone": "+79911815420",
+    "email": "info@мосстяжка.рф",
+    "foundingDate": "2017",
     "areaServed": {
       "@type": "GeoCircle",
       "geoMidpoint": {
@@ -66,8 +79,23 @@
       },
       "geoRadius": "150000"
     },
-    "openingHours": "Mo-Su 09:00-21:00",
-    "priceRange": "₽₽"
+    "openingHoursSpecification": {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
+      "opens": "09:00",
+      "closes": "21:00"
+    },
+    "priceRange": "₽₽",
+    "contactPoint": {
+      "@type": "ContactPoint",
+      "telephone": "+79911815420",
+      "contactType": "customer service",
+      "areaServed": "RU",
+      "availableLanguage": "Russian"
+    },
+    "sameAs": [
+      "https://www.avito.ru/brands/1845931948d986b7a6b67c8d0318a3b9"
+    ]
   }
   </script>
 
@@ -389,6 +417,22 @@
       <p class="text-muted text-center mb-8 max-w-xl mx-auto">Работаем в радиусе 150 км от Москвы — Москва, ближнее и дальнее Подмосковье. Замер бесплатный по всей зоне.</p>
       <div id="coverage-map" class="rounded-xl overflow-hidden border border-gray-200 shadow-sm" style="height: 440px;"></div>
       <p class="text-muted text-sm text-center mt-4">Нужны работы за пределами зоны — <a href="tel:+79911815420" class="underline hover:text-dark">звоните</a>, обсудим индивидуально.</p>
+
+      <!-- Города и районы -->
+      <div class="mt-10">
+        <h3 class="text-xl md:text-2xl font-bold mb-6 text-center">Города и районы, в которых мы работаем</h3>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div class="bg-white rounded-xl p-6 border border-gray-200">
+            <p class="font-bold mb-3">Москва — все округа:</p>
+            <p class="text-muted text-sm leading-relaxed">ЦАО, САО, СВАО, ВАО, ЮВАО, ЮАО, ЮЗАО, ЗАО, СЗАО, ЗелАО, ТиНАО (Новая Москва). Работаем в новостройках Некрасовки, Коммунарки, Саларьево, Бутово, Митино, Жулебино.</p>
+          </div>
+          <div class="bg-white rounded-xl p-6 border border-gray-200">
+            <p class="font-bold mb-3">Подмосковье:</p>
+            <p class="text-muted text-sm leading-relaxed">Одинцово, Красногорск, Балашиха, Мытищи, Химки, Реутов, Люберцы, Подольск, Домодедово, Видное, Котельники, Лобня, Долгопрудный, Королёв, Щёлково, Пушкино, Дмитров, Истра, Звенигород, Наро-Фоминск, Чехов, Серпухов, Ногинск, Электросталь, Раменское, Жуковский, Бронницы.</p>
+          </div>
+        </div>
+        <p class="text-muted text-sm text-center mt-6">Если вашего города нет в списке, но расстояние до 150 км от МКАД — звоните, выедем на замер.</p>
+      </div>
     </div>
   </section>
 
