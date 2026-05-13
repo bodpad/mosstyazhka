@@ -13,7 +13,6 @@
   <link rel="canonical" href="https://мосстяжка.рф/">
 
   <!-- Preconnect для внешних ресурсов -->
-  <link rel="preconnect" href="https://cdn.tailwindcss.com" crossorigin>
   <link rel="preconnect" href="https://api-maps.yandex.ru" crossorigin>
   <link rel="dns-prefetch" href="https://api-maps.yandex.ru">
 
@@ -38,24 +37,7 @@
   <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
   <link rel="icon" href="assets/favicon.ico">
 
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          colors: {
-            dark: '#1A1A1A',
-            accent: '#F5C518',
-            cream: '#FAFAF8',
-            muted: '#666666',
-          },
-          fontFamily: {
-            sans: ['system-ui', '-apple-system', 'Segoe UI', 'Roboto', 'sans-serif'],
-          },
-        },
-      },
-    }
-  </script>
+  <link rel="stylesheet" href="output.css">
 
   <!-- Schema.org LocalBusiness -->
   <script type="application/ld+json">
@@ -68,7 +50,6 @@
     "logo": "https://мосстяжка.рф/assets/mosstyazhka_logo.svg",
     "image": "https://мосстяжка.рф/assets/mosstyazhka_avatar.png",
     "telephone": "+79911815420",
-    "email": "info@мосстяжка.рф",
     "foundingDate": "2017",
     "areaServed": {
       "@type": "GeoCircle",
@@ -95,6 +76,49 @@
     },
     "sameAs": [
       "https://www.avito.ru/brands/1845931948d986b7a6b67c8d0318a3b9"
+    ]
+  }
+  </script>
+
+  <!-- Schema.org HowTo: процесс работы -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "HowTo",
+    "name": "Как мы делаем полусухую стяжку пола",
+    "description": "Процесс работы от заявки до сдачи объекта: 5 шагов, замер бесплатно, стяжка за 1 день.",
+    "totalTime": "P7D",
+    "step": [
+      {
+        "@type": "HowToStep",
+        "position": 1,
+        "name": "Заявка",
+        "text": "Вы звоните или пишете — мы уточняем адрес, площадь и сроки."
+      },
+      {
+        "@type": "HowToStep",
+        "position": 2,
+        "name": "Замер",
+        "text": "Приезжаем бесплатно, промеряем перепады, считаем объём."
+      },
+      {
+        "@type": "HowToStep",
+        "position": 3,
+        "name": "Договор",
+        "text": "Фиксируем цену, сроки и гарантию. Предоплата 30%."
+      },
+      {
+        "@type": "HowToStep",
+        "position": 4,
+        "name": "Работа",
+        "text": "Заливаем стяжку за 1 день. Бригада из 4 человек с оборудованием."
+      },
+      {
+        "@type": "HowToStep",
+        "position": 5,
+        "name": "Сдача",
+        "text": "Проверяем перепады правилом, подписываем акт, даём гарантию."
+      }
     ]
   }
   </script>

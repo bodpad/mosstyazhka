@@ -1,0 +1,13 @@
+{
+  "name": "mosstyazhka",
+  "private": true,
+  "version": "1.0.0",
+  "description": "Сайт-визитка компании по полусухой стяжке пола в Москве и Подмосковье",
+  "scripts": {
+    "build": "tailwindcss -i ./input.css -o ./output.css --minify",
+    "watch": "tailwindcss -i ./input.css -o ./output.css --watch"
+  },
+  "devDependencies": {
+    "tailwindcss": "^3.4.17"
+  }
+}
