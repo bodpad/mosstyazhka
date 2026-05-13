@@ -96,41 +96,71 @@ document.addEventListener('keydown', (e) => {
   if (e.key === 'ArrowRight') lbNavigate(1);
 });
 
-// --- Карта зоны выезда (Яндекс Карты) ---
-if (document.getElementById('coverage-map') && typeof ymaps !== 'undefined') {
-  ymaps.ready(function () {
-    var center = [55.7558, 37.6173]; // Москва
+// --- Карта зоны выезда (Яндекс Карты, lazy-load) ---
+(function () {
+  var mapEl = document.getElementById('coverage-map');
+  if (!mapEl) return;
 
-    var map = new ymaps.Map('coverage-map', {
-      center: center,
-      zoom: 8,
-      controls: ['zoomControl'],
-    }, {
-      suppressMapOpenBlock: true,
+  function initMap() {
+    ymaps.ready(function () {
+      var center = [55.7558, 37.6173]; // Москва
+
+      var map = new ymaps.Map('coverage-map', {
+        center: center,
+        zoom: 8,
+        controls: ['zoomControl'],
+      }, {
+        suppressMapOpenBlock: true,
+      });
+
+      // Зона покрытия — круг 150 км
+      map.geoObjects.add(new ymaps.Circle(
+        [center, 150000],
+        {},
+        {
+          fillColor: '#F5C51826',
+          strokeColor: '#1A1A1A',
+          strokeWidth: 2,
+          strokeOpacity: 0.6,
+        }
+      ));
+
+      // Метка
+      var mark = new ymaps.Placemark(center, {
+        balloonContent: '<b>МосСтяжка</b><br>г. Москва<br>Зона выезда — 150 км',
+      }, {
+        preset: 'islands#blackCircleDotIcon',
+      });
+      map.geoObjects.add(mark);
+      mark.balloon.open();
     });
+  }
 
-    // Зона покрытия — круг 150 км
-    map.geoObjects.add(new ymaps.Circle(
-      [center, 150000],
-      {},
-      {
-        fillColor: '#F5C51826',
-        strokeColor: '#1A1A1A',
-        strokeWidth: 2,
-        strokeOpacity: 0.6,
-      }
-    ));
+  function loadYmapsScript() {
+    if (window.ymapsLoading) return;
+    window.ymapsLoading = true;
+    var s = document.createElement('script');
+    s.src = 'https://api-maps.yandex.ru/2.1/?apikey=4be5c9a6-a8ed-4a26-a6f2-6f8ee9744ea0&lang=ru_RU';
+    s.async = true;
+    s.onload = initMap;
+    document.head.appendChild(s);
+  }
 
-    // Метка
-    var mark = new ymaps.Placemark(center, {
-      balloonContent: '<b>МосСтяжка</b><br>г. Москва<br>Зона выезда — 150 км',
-    }, {
-      preset: 'islands#blackCircleDotIcon',
-    });
-    map.geoObjects.add(mark);
-    mark.balloon.open();
-  });
-}
+  if ('IntersectionObserver' in window) {
+    var observer = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) {
+          loadYmapsScript();
+          observer.disconnect();
+        }
+      });
+    }, { rootMargin: '200px' });
+    observer.observe(mapEl);
+  } else {
+    // Фолбэк для старых браузеров
+    loadYmapsScript();
+  }
+})();
 
 // --- FAQ-аккордеон ---
 document.querySelectorAll('.faq-toggle').forEach(button => {
